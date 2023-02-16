@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* GRID AREAS */
+.grilla {
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
+    grid-template-areas:
+        "nav header header header"
+        "nav section1 section1 aside"
+        "nav section2 section2 aside"
+        "nav form form aside"
+        "footer footer footer footer"
+    ;
+    grid-template-rows: repeat(4, 25vh);
+}
+
+/* NAVEGACION */
+
+.nav {
+    grid-area: nav;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: navEnMovimiento;
+    animation-duration: 3s;
+    animation-timing-function: infinite;
+    animation-iteration-count: infinite;
+}
+
+.nav ul {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav li {
+    list-style: none;
+    padding: 20px;
+    height: 40px;
+}
+
+.nav li:hover {
+    background-color: aqua;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav img {
+    width: 150px;
+    transform: translate(0, 25px);
+    transition: 1s;
+    animation-name: girando;
+    animation-duration: 4s;
+    animation-timing-function: infinite;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+    text-align: center;
+
+    /* GRADIENTES */
+    background-image: radial-gradient(circle, rgba(150, 147, 148, 1) 0%, rgba(123, 162, 90, 1) 100%)
+        /* top (arriba) -  bottom (abajo) - right (izq.) left (der.) */
+
+}
+
+.header h1 {
+    font-family: 'Prompt', sans-serif;
+    font-size: 3rem;
+    text-decoration: none;
+    color: black;
+    transform: scale(1.5, 1);
+    transition: 1s;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header p {
+    max-width: 850px;
+    margin: 20px auto;
+}
+
+
+
+
+/* SECTION 1 */
+
+.section1 {
+    grid-area: section1;
+    background-color: blue;
+    /* background-image: url(https://i1.wp.com/www.senpai.com.mx/wp-content/uploads/2020/07/Naruto-lanzara-un-spin-off-dedicado-a-Shikamaru.jpg?fit=1280%2C720&ssl=1);
+    background-size:contain; */
+    /* unidad relativa: 1 rem = 16px */
+    /* margin-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section1 article {
+    max-width: 2500px;
+    text-align: center;
+    margin: 1rem;
+}
+
+.section1 h2 {
+    font-size: 2rem;
+}
+
+.section1 button {
+    padding: .5rem;
+    margin: 1rem;
+    /* rotate X / ratate Y / rotate Z */
+    transform: rotate(10deg);
+    transition: 3s;
+}
+
+.section1 button:hover {
+    transform: scale(1.5);
+}
+
+
+
+
+/* SECTION 2 */
+.section2 {
+    grid-area: section2;
+    background-color: blueviolet;
+    /* background-image: url(../Recursos/Shikamaru_Adulto.webp); */
+    /* background-size:cover; */
+    display: flex;
+    /* margin-top: 1rem; */
+}
+
+.section2 article {
+    max-width: 2500px;
+    text-align: center;
+    margin: 1rem;
+}
+
+.section2 h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
+
+/* FORMULARIO */
+.form {
+    grid-area: form;
+    background-color: green;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form h3 {
+    font-size: 2rem;
+}
+
+.form div {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    height: 2rem;
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: beige;
+    transform: skew(10deg);
+}
+
+.form input[type=submit]:hover {
+    background-color: black;
+    color: white;
+}
+
+.form input:focus {
+    width: 320px;
+    transition: 0.5s;
+    background-color: red;
+}
+
+
+
+/* FOOTER */
+.footer {
+    grid-area: footer;
+    background-color: yellow;
+    animation-name: footerEnMovimiento;
+    animation-duration: 5s;
+    animation-timing-function: infinite;
+    animation-iteration-count: infinite;
+}
+
+.footer div {
+    display: flex;
+}
+
+.footer i {
+    margin: 5px;
+}
+
+
+
+
+/* ASIDE */
+.aside {
+    grid-area: aside;
+    background-color: brown;
+    background-image: url(../Recursos/Shikacuerpoentero.jpg);
+    background-size: contain;
+
+
+}
+
+
+
+
+@keyframes footerEnMovimiento {
+    0% {
+        background-color: blue;
+    }
+
+    15% {
+
+        background-color: violet;
+    }
+
+    25% {
+
+        background-color: red;
+    }
+
+    50% {
+
+        background-color: yellow;
+    }
+
+    75% {
+
+        background-color: moccasin;
+    }
+
+    100% {
+
+        background-color: green;
+    }
+}
+
+@keyframes navEnMovimiento {
+    0% {
+        background-color: blue;
+    }
+
+    15% {
+
+        background-color: violet;
+    }
+
+    25% {
+
+        background-color: red;
+    }
+
+    50% {
+
+        background-color: yellow;
+    }
+
+    75% {
+
+        background-color: moccasin;
+    }
+
+    100% {
+
+        background-color: green;
+    }
+}
+
+@keyframes girando {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(50deg);
+
+    }
+
+    100% {
+        transform: rotate(100deg);
+
+    }
+
+}
+
+
+/* MEDIA QUERY - Mobile last de grande a chico // Mobile first de chico a grande */
+/* MOBILE LAST = ANCHO MAX | MAX-WIDTH */
+/* MOBILE FIST = ANCHO MINIMO | MIN-WIDTH*/
+
+@media (max-width: 768px) {
+    .grilla {
+        grid-template-areas:
+            "nav nav nav nav"
+            "header header header header"
+            "section1 section1 section1 section1"
+            "section2 section2 section2 section2"
+            "form form form form"
+            "footer footer footer footer"
+    }
+
+    .aside {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: row;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .grilla {
+        grid-template-areas:
+            "nav nav nav nav"
+            "header header header header"
+            "section1 section1 section1 section1"
+            "section2 section2 section2 section2"
+            "form form form form"
+            "footer footer footer footer"
+    }
+
+    .nav li {
+        padding: 9px;
+    }
+
+    .section1 article {
+        margin: auto;
+    }
+
+    .section1 button {
+        padding: 1px;
+    }
+}
+
+@media (max-width: 375px) {
+    .grilla {
+        grid-template-areas:
+            "nav nav nav nav"
+            "header header header header"
+            "section1 section1 section1 section1"
+            "section2 section2 section2 section2"
+            "form form form form"
+            "footer footer footer footer"
+    }
+
+    .nav {
+        flex-direction: row;
+    }
+
+    .nav img {
+        display: none;
+    }
+
+    .nav li {
+        margin: auto;
+    }
+
+    .section1 button {
+        margin: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .grilla {
+        grid-template-areas:
+            "nav nav nav nav"
+            "header header header header"
+            "section1 section1 section1 section1"
+            "section2 section2 section2 section2"
+            "form form form form"
+            "footer footer footer footer"
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .nav li {
+        padding: 2px;
+        margin: auto;
+    }
+
+    .section1 article {
+        margin: auto;
+    }
+
+    .section1 button {
+        margin: auto;
+    }
+}
+
+
+/* min 1:34:57 14/02 */
